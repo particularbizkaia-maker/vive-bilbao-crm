@@ -1,18 +1,20 @@
-# Vive Bilbao CRM v3
+# Vive Bilbao CRM V4
 
-Versión funcional del CRM online para Vive Bilbao Inmobiliario.
+CRM inmobiliario online con Supabase y Next.js.
 
-Incluye:
-- Login con Supabase Auth.
-- Inmuebles: alta, edición, eliminación, precio, dirección, estado, visibilidad compartida/privada, superficie, habitaciones, baños y descripción.
-- Clientes: alta, edición y eliminación con teléfono, email, ciudad y notas.
-- Calendario mensual con todos los días, navegación entre meses, selección de día y citas con hora, ubicación y notas.
-- Inicio con contadores y próximas citas.
-- Búsqueda global para inmuebles y clientes.
-- RLS de Supabase para permisos.
+## V4 incluye
+- Clientes con ficha profesional y roles comerciales.
+- Inmuebles asociados a propietario/cliente.
+- Pedidos de compra/alquiler vinculados a cliente.
+- Cruce automático de pedidos con inmuebles por ciudad, tipo, precio y dormitorios.
+- Calendario mensual con citas vinculadas a cliente e inmueble.
+- Tareas y seguimiento.
+- Panel inicial y estadísticas.
+- Auth Supabase y permisos admin/asesor.
 
-Variables de entorno:
-NEXT_PUBLIC_SUPABASE_URL
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+## Supabase
+Ejecutar `supabase/schema-v4.sql` en el proyecto CRM existente. Es una migración idempotente: conserva los datos existentes y añade las relaciones/campos nuevos.
 
-El resto de módulos (Pedidos, Captación, Tareas y Noticias) quedan preparados para la siguiente fase.
+## Vercel
+Mantener Root Directory: `vive-bilbao-crm-completo`.
+Variables: `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`.
